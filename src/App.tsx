@@ -1865,21 +1865,29 @@ export default function App() {
       )}
 
       {/* FOOTER */}
+{/* FOOTER */}
       <footer className="footer">
+        {/* Vùng chứa quảng cáo Yandex */}
         <div style={{ margin: '20px 0', textAlign: 'center' }}>
-  <div id="yandex_rtb_R-A-XXXXXX-X"></div>
-  <script dangerouslySetInnerHTML={{
-    __html: `
-      window.yaContextCb = window.yaContextCb || [];
-      window.yaContextCb.push(()=>{
-        Ya.Context.AdvManager.render({
-          renderTo: 'yandex_rtb_R-A-XXXXXX-X',
-          blockId: 'R-A-XXXXXX-X'
-        })
-      })
-    `
-  }} />
-</div>
+          <div id="yandex_rtb_R-A-19039787-1"></div>
+          <script dangerouslySetInnerHTML={{
+            __html: `
+              window.yaContextCb = window.yaContextCb || [];
+              window.yaContextCb.push(()=>{
+                Ya.Context.AdvManager.render({
+                  renderTo: 'yandex_rtb_R-A-19039787-1',
+                  blockId: 'R-A-19039787-1'
+                })
+              })
+            `
+          }} />
+        </div>
+
+        {/* Nội dung Footer của bạn (Ví dụ) */}
+        <div className="footer-content">
+           <p>© 2024 Elysium Perfume Collection</p>
+        </div>
+      </footer>
         <div className="footer-content">
           <div className="footer-section">
             <div className="footer-logo">
