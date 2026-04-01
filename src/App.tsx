@@ -459,6 +459,30 @@ export default function App() {
     document.documentElement.setAttribute("data-theme", theme);
   }, [cart, theme, language, wishlist]);
 
+  // Load Yandex Ads Script
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://yandex.ru/ads/system/context.js";
+    script.async = true;
+    document.head.appendChild(script);
+
+    return () => {
+      if (script.parentNode) {
+        script.parentNode.removeChild(script);
+      }
+    };
+  }, []);
+
+  // Render Yandex Ads
+  useEffect(() => {
+    if ((window as any).Ya && (window as any).Ya.Context) {
+      (window as any).Ya.Context.AdvManager.render({
+        renderTo: 'yandex_rtb_R-A-19039787-1',
+        blockId: 'R-A-19039787-1'
+      });
+    }
+  }, []);
+
   // ===== Functions =====
   const goPage = (p: string) => {
     setLoading(true);
@@ -1874,20 +1898,6 @@ export default function App() {
         {/* Yandex Ads */}
         <div style={{ margin: '20px 0', textAlign: 'center', backgroundColor: '#f5f5f5', padding: '20px' }}>
           <div id="yandex_rtb_R-A-19039787-1"></div>
-          <script
-            type="text/javascript"
-            dangerouslySetInnerHTML={{
-              __html: `
-                window.yaContextCb = window.yaContextCb || [];
-                window.yaContextCb.push(()=>{
-                  Ya.Context.AdvManager.render({
-                    renderTo: 'yandex_rtb_R-A-19039787-1',
-                    blockId: 'R-A-19039787-1'
-                  })
-                })
-              `
-            }}
-          />
         </div>
 
         <div className="container">
