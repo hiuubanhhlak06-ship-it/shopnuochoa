@@ -1866,6 +1866,20 @@ export default function App() {
 
       {/* FOOTER */}
       <footer className="footer">
+        <div style={{ margin: '20px 0', textAlign: 'center' }}>
+  <div id="yandex_rtb_R-A-XXXXXX-X"></div>
+  <script dangerouslySetInnerHTML={{
+    __html: `
+      window.yaContextCb = window.yaContextCb || [];
+      window.yaContextCb.push(()=>{
+        Ya.Context.AdvManager.render({
+          renderTo: 'yandex_rtb_R-A-XXXXXX-X',
+          blockId: 'R-A-XXXXXX-X'
+        })
+      })
+    `
+  }} />
+</div>
         <div className="footer-content">
           <div className="footer-section">
             <div className="footer-logo">
@@ -1885,6 +1899,7 @@ export default function App() {
               <a href="#" className="social-link">📺</a>
             </div>
           </div>
+          
 
           <div className="footer-section">
             <h4>Mua sắm</h4>
@@ -1906,7 +1921,7 @@ export default function App() {
 
           <div className="footer-section">
             <h4>Công ty</h4>
-            <a href="#">Về chúng tôi</a>
+            <a href="#">Về chúng tôi</a>.
             <a href="#">Tuyển dụng</a>
             <a href="#">Blog</a>
             <a href="#">Hệ thống cửa hàng</a>
@@ -1923,6 +1938,7 @@ export default function App() {
         </div>
 
         <div className="footer-bottom">
+          
           <div className="container">
             <div className="footer-bottom-content">
               <p>© 2024 Elysium Perfume Collection. Bảo lưu mọi quyền.</p>
