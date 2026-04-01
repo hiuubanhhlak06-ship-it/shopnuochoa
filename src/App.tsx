@@ -646,19 +646,6 @@ export default function App() {
     showNotificationMessage("Cập nhật hồ sơ thành công!");
   };
 
-  const changePassword = (currentPassword: string, newPassword: string) => {
-    if (!user) return;
-    
-    // In thực tế, bạn sẽ kiểm tra mật khẩu hiện tại với API
-    if (currentPassword === "password123") { // Mock check
-      showNotificationMessage("Đổi mật khẩu thành công!");
-      return true;
-    } else {
-      showNotificationMessage("Mật khẩu hiện tại không đúng!", "error");
-      return false;
-    }
-  };
-
   const applyCoupon = () => {
     if (couponCode === "VIP10") {
       setDiscount(10);
@@ -1865,97 +1852,32 @@ export default function App() {
       )}
 
       {/* FOOTER */}
-{/* FOOTER */}
       <footer className="footer">
-        {/* Vùng chứa quảng cáo Yandex */}
-        <div style={{ margin: '20px 0', textAlign: 'center' }}>
-          <div id="yandex_rtb_R-A-19039787-1"></div>
-          <script dangerouslySetInnerHTML={{
-            __html: `
-              window.yaContextCb = window.yaContextCb || [];
-              window.yaContextCb.push(()=>{
-                Ya.Context.AdvManager.render({
-                  renderTo: 'yandex_rtb_R-A-19039787-1',
-                  blockId: 'R-A-19039787-1'
-                })
-              })
-            `
-          }} />
-        </div>
-
-        {/* Nội dung Footer của bạn (Ví dụ) */}
-        <div className="footer-content">
-           <p>© 2024 Elysium Perfume Collection</p>
-        </div>
-      </footer>
-        <div className="footer-content">
-          <div className="footer-section">
-            <div className="footer-logo">
-              <span className="logo-icon">🌸</span>
-              <div>
-                <h3>ELYSIUM</h3>
-                <p>Perfume Collection</p>
-              </div>
+        <div className="container">
+          <div className="footer-content">
+            <div className="footer-column">
+              <h4>Về Chúng Tôi</h4>
+              <p>Elysium Perfume Collection - Nước hoa cao cấp từ Pháp</p>
             </div>
-            <p className="footer-description">
-              Thương hiệu nước hoa cao cấp, mang đến trải nghiệm hương thơm độc đáo và đẳng cấp.
-            </p>
-            <div className="social-links">
-              <a href="#" className="social-link">📘</a>
-              <a href="#" className="social-link">📷</a>
-              <a href="#" className="social-link">🎵</a>
-              <a href="#" className="social-link">📺</a>
+            <div className="footer-column">
+              <h4>Liên Hệ</h4>
+              <p>Email: info@elysium.com</p>
+              <p>Hotline: 1900-0000</p>
+            </div>
+            <div className="footer-column">
+              <h4>Mạng Xã Hội</h4>
+              <p>Facebook | Instagram | Twitter</p>
             </div>
           </div>
-          
-
-          <div className="footer-section">
-            <h4>Mua sắm</h4>
-            <a href="#">Nước hoa nữ</a>
-            <a href="#">Nước hoa nam</a>
-            <a href="#">Nước hoa unisex</a>
-            <a href="#">Limited Edition</a>
-            <a href="#">Best Sellers</a>
-          </div>
-
-          <div className="footer-section">
-            <h4>Hỗ trợ</h4>
-            <a href="#">Trung tâm hỗ trợ</a>
-            <a href="#">Theo dõi đơn hàng</a>
-            <a href="#">Chính sách đổi trả</a>
-            <a href="#">Chính sách bảo mật</a>
-            <a href="#">Điều khoản sử dụng</a>
-          </div>
-
-          <div className="footer-section">
-            <h4>Công ty</h4>
-            <a href="#">Về chúng tôi</a>.
-            <a href="#">Tuyển dụng</a>
-            <a href="#">Blog</a>
-            <a href="#">Hệ thống cửa hàng</a>
-            <a href="#">Liên hệ hợp tác</a>
-          </div>
-
-          <div className="footer-section">
-            <h4>Thông tin liên hệ</h4>
-            <p>📍 216 Trần Duy Hưng, Hà Nội</p>
-            <p>📞 1900 1234</p>
-            <p>✉️ support@elysium-perfume.com</p>
-            <p>🕒 9:00 - 21:00 hàng ngày</p>
-          </div>
         </div>
-
-        <div className="footer-bottom">
-          
-          <div className="container">
-            <div className="footer-bottom-content">
-              <p>© 2024 Elysium Perfume Collection. Bảo lưu mọi quyền.</p>
-              <div className="payment-methods">
-                <span>💳</span>
-                <span>🏦</span>
-                <span>📱</span>
-                <span>💰</span>
-              </div>
+        <div className="container">
+          <div className="footer-bottom-content">
+            <p>© 2024 Elysium Perfume Collection. Bảo lưu mọi quyền.</p>
+            <div className="payment-methods">
+              <span>💳</span>
+              <span>🏦</span>
+              <span>📱</span>
+              <span>💰</span>
             </div>
           </div>
         </div>
